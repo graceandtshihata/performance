@@ -1,0 +1,46 @@
+execution:
+  - executor: junit
+    concurrency: 500   # number of virtual users
+    ramp-up: 15s
+  #  steps: 5          # number of steps of growing
+    scenario: apiCall
+    run-items:
+      - loadtests.ClientAPITest#pre2
+
+scenarios:
+  apiCall:
+    script: ./src/test/java/loadtests
+    additional-classpath:
+      - target/
+      - target/LoadTestArtifacts/commons-io-2.6.jar
+      - target/LoadTestArtifacts/ClientAppTest.jar
+      - target/LoadTestArtifacts/commons-lang3-3.8.1.jar
+      - target/LoadTestArtifacts/webdrivermanager-3.6.2.jar
+      - target/LoadTestArtifacts/httpcore-4.4.8.jar
+      - target/LoadTestArtifacts/httpclient-4.5.6.jar
+      - target/LoadTestArtifacts/slf4j-api-1.7.30.jar
+      - target/LoadTestArtifacts/httpmime-4.5.3.jar
+      - target/LoadTestArtifacts/commons-logging-1.2.jar
+      - target/LoadTestArtifacts/rest-assured-4.0.0.jar
+      - target/LoadTestArtifacts/rest-assured-common-4.0.0.jar
+      - target/LoadTestArtifacts/groovy-2.5.6.jar
+      - target/LoadTestArtifacts/groovy-json-2.5.6.jar
+      - target/LoadTestArtifacts/groovy-xml-2.5.6.jar
+      - target/LoadTestArtifacts/gson-2.8.5.jar
+      - target/LoadTestArtifacts/guava-25.0-jre.jar
+      - target/LoadTestArtifacts/json-path-4.0.0.jar
+      - target/LoadTestArtifacts/xml-path-4.0.0.jar
+      - target/LoadTestArtifacts/hamcrest-2.1.jar
+      - target/LoadTestArtifacts/jackson-databind-2.9.9.3.jar
+      - target/LoadTestArtifacts/json-simple-1.1.1.jar
+      - target/LoadTestArtifacts/jackson-core-2.9.9.jar
+      - target/LoadTestArtifacts/jackson-annotations-2.9.0.jar
+
+
+
+services:
+  - module: shellexec
+    prepare: mvn -Dmaven.test.skip=true clean package
+
+reporting:
+  - module: junit-xml

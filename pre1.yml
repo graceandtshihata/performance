@@ -1,0 +1,25 @@
+execution:
+  - executor: jmeter
+    concurrency: 100   # number of virtual users
+    ramp-up: 10s
+  #  steps: 5          # number of steps of growing
+    scenario: apiCall
+    run-items:
+      - loadtests.ClientAPITest#pre1
+      - loadtests.ClientAPITest#pre2
+      - loadtests.ClientAPITest#pre3
+
+
+scenarios:
+  apiCall:
+    script: ./src/test/java/loadtests
+    additional-classpath:
+      - target/*
+
+
+services:
+  - module: shellexec
+    prepare: mvn -Dmaven.test.skip=true  clean package
+
+reporting:
+  - module: junit-xml
