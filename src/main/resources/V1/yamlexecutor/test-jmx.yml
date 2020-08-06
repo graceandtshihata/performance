@@ -2,7 +2,7 @@ execution:
   - executor: junit
     concurrency: 500   # number of virtual users
     ramp-up: 15s
-  #  steps: 5          # number of steps of growing
+    #  steps: 5          # number of steps of growing
     scenario: apiCall
     run-items:
       - loadtests.ClientAPITest#post1

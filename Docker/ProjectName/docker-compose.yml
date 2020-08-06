@@ -1,0 +1,10 @@
+version: "2.4"
+services:
+  srus_performance:
+    image: sr_performance_test_project_here
+    environment:
+      - MODULE=${YML_FILE}
+      - VERSION=${VERSION}
+      - PROJECT=project
+    volumes:
+      - ./test-output/docker-output/performance_testing-lts/tmp/artifacts

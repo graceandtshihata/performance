@@ -1,0 +1,16 @@
+version: "2.4"
+services:
+  proj_v1:
+    image: our.Immage.repo:333/44/tests-automationz;project_v1
+    build:
+      context: ./
+      dockerfile: Docker/ProjectName/Dockerfile
+      args:
+        buildno:1
+  proj_v2:
+    image: our.Immage.repo:333/44/tests-automationz;project_v1
+    build:
+      context: ./
+      dockerfile: Docker/ProjectName/Dockerfile
+      args:
+        buildno:1
