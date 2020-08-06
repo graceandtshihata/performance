@@ -1,0 +1,233 @@
+---
+cli:
+  linter:
+    disable: false
+    ignored-warnings: []
+    lint-and-exit: false
+    warn-on-unfamiliar-fields: false
+cli-aliases:
+  cloud:
+    provisioning: cloud
+  detach:
+    modules:
+      cloud:
+        detach: true
+  func:
+    modules:
+      console:
+        disable: true
+    settings:
+      aggregator: functional-consolidator
+  gui:
+    modules:
+      jmeter:
+        gui: true
+  install-tools:
+    services:
+    - install-checker
+  lint:
+    cli:
+      linter:
+        lint-and-exit: true
+  local:
+    provisioning: local
+  locations:
+    modules:
+      cloud:
+        dump-locations: true
+    provisioning: cloud
+  nolint:
+    cli:
+      linter:
+        disable: true
+  public:
+    modules:
+      blazemeter:
+        public-report: true
+  report:
+    reporting:
+    - blazemeter
+  sequential:
+    modules:
+      local:
+        sequential: true
+execution:
+- concurrency: 500
+  executor: junit
+  ramp-up: 15s
+  run-items:
+  - loadtests.ClientAPITest#post1
+  scenario: apiCall
+included-configs: []
+modules:
+  ab:
+    class: bzt.modules.ab.ApacheBenchmarkExecutor
+  android-emulator:
+    class: bzt.modules.services.AndroidEmulatorLoader
+  apiritif:
+    class: bzt.modules.apiritif.ApiritifNoseExecutor
+  appium:
+    class: bzt.modules.services.AppiumLoader
+  blazemeter:
+    class: bzt.modules.blazemeter.BlazeMeterUploader
+  capturehar:
+    class: bzt.modules.blazemeter.ServiceStubCaptureHAR
+  cloud:
+    class: bzt.modules.blazemeter.CloudProvisioning
+    default-location: us-central1-a
+  console:
+    class: bzt.modules.console.ConsoleStatusReporter
+  consolidator:
+    class: bzt.modules.aggregator.ConsolidatingAggregator
+    percentiles:
+    - 0.0
+    - 50.0
+    - 90.0
+    - 95.0
+    - 99.0
+    - 99.9
+    - 100.0
+  external-results-loader:
+    class: bzt.modules.external.ExternalResultsLoader
+  final-stats:
+    class: bzt.modules.reporting.FinalStatus
+  final_stats:
+    class: bzt.modules.reporting.FinalStatus
+  functional-consolidator:
+    class: bzt.modules.functional.FunctionalAggregator
+  gatling:
+    class: bzt.modules.gatling.GatlingExecutor
+    properties:
+      gatling.data.file.bufferSize: 256
+  grinder:
+    class: bzt.modules.grinder.GrinderExecutor
+    properties:
+      grinder.useConsole: false
+  install-checker:
+    class: bzt.modules.services.InstallChecker
+  jmeter:
+    class: bzt.modules.jmeter.JMeterExecutor
+    plugins:
+    - jpgc-casutg
+    - jpgc-dummy
+    - jpgc-ffw
+    - jpgc-fifo
+    - jpgc-functions
+    - jpgc-json
+    - jpgc-perfmon
+    - jpgc-prmctl
+    - jpgc-tst
+    properties:
+      jmeter.save.saveservice.autoflush: 'true'
+      jmeter.save.saveservice.connect_time: 'true'
+      jmeterengine.force.system.exit: 'true'
+      summariser.name: ''
+    protocol-handlers:
+      http: bzt.jmx.http.HTTPProtocolHandler
+  junit:
+    class: bzt.modules.java.JUnitTester
+  junit-xml:
+    class: bzt.modules.reporting.JUnitXMLReporter
+  local:
+    class: bzt.modules.provisioning.Local
+  locust:
+    class: bzt.modules.locustio.LocustIOExecutor
+  mocha:
+    class: bzt.modules.javascript.MochaTester
+  molotov:
+    class: bzt.modules.molotov.MolotovExecutor
+  monitoring:
+    class: bzt.modules.monitoring.Monitoring
+  newman:
+    class: bzt.modules.javascript.NewmanExecutor
+  nose:
+    class: bzt.modules.apiritif.ApiritifNoseExecutor
+  nunit:
+    class: bzt.modules.csharp.NUnitExecutor
+  passfail:
+    class: bzt.modules.passfail.PassFailStatus
+  pbench:
+    class: bzt.modules.pbench.PBenchExecutor
+  proxy2jmx:
+    class: bzt.modules.proxy2jmx.Proxy2JMX
+  pytest:
+    class: bzt.modules.pytest.PyTestExecutor
+  robot:
+    class: bzt.modules.robot.RobotExecutor
+  rspec:
+    class: bzt.modules.ruby.RSpecTester
+  screenshoter:
+    class: bzt.modules.blazemeter.ServiceStubScreenshoter
+  selenium:
+    class: bzt.modules.selenium.SeleniumExecutor
+  shellexec:
+    class: bzt.modules.shellexec.ShellExecutor
+  siege:
+    class: bzt.modules.siege.SiegeExecutor
+  testng:
+    class: bzt.modules.java.TestNGTester
+  tsung:
+    class: bzt.modules.tsung.TsungExecutor
+  unpacker:
+    class: bzt.modules.services.Unpacker
+  virtual-display:
+    class: bzt.modules.services.VirtualDisplay
+  wdio:
+    class: bzt.modules.javascript.WebdriverIOExecutor
+provisioning: local
+reporting:
+- module: final-stats
+- module: console
+- module: junit-xml
+scenarios:
+  apiCall:
+    additional-classpath:
+    - target/
+    - target/LoadTestArtifacts/commons-io-2.6.jar
+    - target/LoadTestArtifacts/ClientAppTest.jar
+    - target/LoadTestArtifacts/commons-lang3-3.8.1.jar
+    - target/LoadTestArtifacts/webdrivermanager-3.6.2.jar
+    - target/LoadTestArtifacts/httpcore-4.4.8.jar
+    - target/LoadTestArtifacts/httpclient-4.5.6.jar
+    - target/LoadTestArtifacts/slf4j-api-1.7.30.jar
+    - target/LoadTestArtifacts/httpmime-4.5.3.jar
+    - target/LoadTestArtifacts/commons-logging-1.2.jar
+    - target/LoadTestArtifacts/rest-assured-4.0.0.jar
+    - target/LoadTestArtifacts/rest-assured-common-4.0.0.jar
+    - target/LoadTestArtifacts/groovy-2.5.6.jar
+    - target/LoadTestArtifacts/groovy-json-2.5.6.jar
+    - target/LoadTestArtifacts/groovy-xml-2.5.6.jar
+    - target/LoadTestArtifacts/gson-2.8.5.jar
+    - target/LoadTestArtifacts/guava-25.0-jre.jar
+    - target/LoadTestArtifacts/json-path-4.0.0.jar
+    - target/LoadTestArtifacts/xml-path-4.0.0.jar
+    - target/LoadTestArtifacts/hamcrest-2.1.jar
+    - target/LoadTestArtifacts/jackson-databind-2.9.9.3.jar
+    - target/LoadTestArtifacts/json-simple-1.1.1.jar
+    - target/LoadTestArtifacts/jackson-core-2.9.9.jar
+    - target/LoadTestArtifacts/jackson-annotations-2.9.0.jar
+    script: ./src/test/java/loadtests
+services:
+- local:
+  - metrics:
+    - cpu
+    - mem
+    - bytes-sent
+    - bytes-recv
+    - disk-read
+    - disk-write
+    - disk-space
+    - engine-loop
+    - conn-all
+  module: monitoring
+- module: shellexec
+  prepare:
+  - command: mvn -Dmaven.test.skip=true clean package
+settings:
+  aggregator: consolidator
+  default-executor: jmeter
+  env:
+    OBJC_DISABLE_INITIALIZE_FORK_SAFETY: 'YES'
+    TAURUS_ARTIFACTS_DIR: /Users/grace.tshihata/pit/performance/scenarios/2020-08-06_11-29-21.029094
+version: 1.14.0
+

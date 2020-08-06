@@ -18,6 +18,7 @@ import java.io.File;
 
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.hasSize;
 
 public class ClientAPITest {
     Config config = new Config();
@@ -31,7 +32,13 @@ public class ClientAPITest {
     }
 
     @Test
-    public void pre2() throws Exception {
+    public void pre1() throws Exception {
+        given().
+                when().
+                get("http://ergast.com/api/f1/2017/circuits.json").
+                then().
+                assertThat().
+                body("MRData.CircuitTable.Circuits.circuitId",hasSize(20));
 
        }
 }

@@ -1,0 +1,240 @@
+[2020-08-06 12:03:20,316 INFO root] Taurus CLI Tool v1.14.0
+[2020-08-06 12:03:20,316 DEBUG root] Command-line options: {'log': '/var/folders/82/6d4s2fn16z934wt1z93lyq0j08sml4/T/bzt_p2w98cbn.log', 'option': None, 'quiet': None, 'verbose': None, 'no_system_configs': None, 'aliases': []}
+[2020-08-06 12:03:20,317 DEBUG root] Python: CPython 3.8.1
+[2020-08-06 12:03:20,317 DEBUG root] OS: uname_result(system='Darwin', node='30153-MBPR.attlocal.net', release='19.4.0', version='Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST 2020; root:xnu-6153.101.6~15/RELEASE_X86_64', machine='x86_64', processor='i386')
+[2020-08-06 12:03:20,317 INFO root] Starting with configs: ['pre1.yml']
+[2020-08-06 12:03:20,317 DEBUG root] Using personal config: /Users/grace.tshihata/.bzt-rc
+[2020-08-06 12:03:20,317 INFO Engine] Configuring...
+[2020-08-06 12:03:20,348 DEBUG Engine] Base configs list: ['/usr/local/Cellar/bzt/1.14.0_1/libexec/lib/python3.8/site-packages/bzt/resources/10-base-config.yml']
+[2020-08-06 12:03:20,349 DEBUG Engine.Configuration] Configs: ['/usr/local/Cellar/bzt/1.14.0_1/libexec/lib/python3.8/site-packages/bzt/resources/10-base-config.yml']
+[2020-08-06 12:03:20,349 DEBUG Engine.Configuration] Reading /usr/local/Cellar/bzt/1.14.0_1/libexec/lib/python3.8/site-packages/bzt/resources/10-base-config.yml as YAML
+[2020-08-06 12:03:20,375 DEBUG Engine] User configs list: ['/Users/grace.tshihata/.bzt-rc', 'pre1.yml']
+[2020-08-06 12:03:20,375 DEBUG Engine.Configuration] Configs: ['/Users/grace.tshihata/.bzt-rc', 'pre1.yml']
+[2020-08-06 12:03:20,376 DEBUG Engine.Configuration] Reading /Users/grace.tshihata/.bzt-rc as YAML
+[2020-08-06 12:03:20,381 DEBUG Engine.Configuration] Reading pre1.yml as YAML
+[2020-08-06 12:03:20,384 DEBUG Engine.Configuration] Configs: ['/Users/grace.tshihata/.bzt-rc', 'pre1.yml']
+[2020-08-06 12:03:20,384 DEBUG Engine.Configuration] Reading /Users/grace.tshihata/.bzt-rc as YAML
+[2020-08-06 12:03:20,389 DEBUG Engine.Configuration] Reading pre1.yml as YAML
+[2020-08-06 12:03:20,393 DEBUG Engine] Requesting updates info: https://gettaurus.org/updates/?version=1.14.0&installID=macos-784f439c7271
+[2020-08-06 12:03:20,393 DEBUG HTTPClient] Making HTTP request GET https://gettaurus.org/updates/?version=1.14.0&installID=macos-784f439c7271
+[2020-08-06 12:03:20,394 INFO Engine] Artifacts dir: /Users/grace.tshihata/pit/performance/2020-08-06_12-03-20.394180
+[2020-08-06 12:03:20,394 DEBUG Engine] New artifact filename: /Users/grace.tshihata/pit/performance/2020-08-06_12-03-20.394180/effective
+[2020-08-06 12:03:20,396 DEBUG Engine.Configuration] Dumping YAML config into /Users/grace.tshihata/pit/performance/2020-08-06_12-03-20.394180/effective.yml
+[2020-08-06 12:03:20,418 DEBUG Engine.Configuration] Dumping JSON config into /Users/grace.tshihata/pit/performance/2020-08-06_12-03-20.394180/effective.json
+[2020-08-06 12:03:20,419 DEBUG Engine] New artifact filename: /Users/grace.tshihata/pit/performance/2020-08-06_12-03-20.394180/merged.yml
+[2020-08-06 12:03:20,419 DEBUG Engine.Configuration] Dumping YAML config into /Users/grace.tshihata/pit/performance/2020-08-06_12-03-20.394180/merged.yml
+[2020-08-06 12:03:20,421 DEBUG Engine] New artifact filename: /Users/grace.tshihata/pit/performance/2020-08-06_12-03-20.394180/merged.json
+[2020-08-06 12:03:20,422 DEBUG Engine.Configuration] Dumping JSON config into /Users/grace.tshihata/pit/performance/2020-08-06_12-03-20.394180/merged.json
+[2020-08-06 12:03:20,422 DEBUG Engine] Add existing artifact (move=False): pre1.yml
+[2020-08-06 12:03:20,423 DEBUG Engine] Copying pre1.yml to /Users/grace.tshihata/pit/performance/2020-08-06_12-03-20.394180/pre1.yml
+[2020-08-06 12:03:20,424 DEBUG urllib3.connectionpool] Starting new HTTPS connection (1): gettaurus.org:443
+[2020-08-06 12:03:20,425 DEBUG root] Closing log handler: /var/folders/82/6d4s2fn16z934wt1z93lyq0j08sml4/T/bzt_p2w98cbn.log
+[2020-08-06 12:03:20,426 DEBUG root] Switched writing logs to /Users/grace.tshihata/pit/performance/2020-08-06_12-03-20.394180/bzt.log
+[2020-08-06 12:03:20,426 DEBUG root] Linting config
+[2020-08-06 12:03:20,433 INFO Engine] Preparing...
+[2020-08-06 12:03:20,434 DEBUG Engine] Module config: consolidator {'class': 'bzt.modules.aggregator.ConsolidatingAggregator'}
+[2020-08-06 12:03:20,434 DEBUG root] Importing module: bzt.modules.aggregator
+[2020-08-06 12:03:20,684 DEBUG root] Loading class: 'ConsolidatingAggregator' from <module 'bzt.modules.aggregator' from '/usr/local/Cellar/bzt/1.14.0_1/libexec/lib/python3.8/site-packages/bzt/modules/aggregator.py'>
+[2020-08-06 12:03:20,684 DEBUG Engine.consolidator] Buffer scaling setup: percentile 95.0 from [0.0, 50.0, 90.0, 95.0, 99.0, 99.9, 100.0] selected
+[2020-08-06 12:03:20,685 DEBUG Engine] Module config: monitoring {'class': 'bzt.modules.monitoring.Monitoring'}
+[2020-08-06 12:03:20,685 DEBUG root] Importing module: bzt.modules.monitoring
+[2020-08-06 12:03:20,687 DEBUG root] Loading class: 'Monitoring' from <module 'bzt.modules.monitoring' from '/usr/local/Cellar/bzt/1.14.0_1/libexec/lib/python3.8/site-packages/bzt/modules/monitoring.py'>
+[2020-08-06 12:03:20,687 DEBUG Engine] Module config: shellexec {'class': 'bzt.modules.shellexec.ShellExecutor'}
+[2020-08-06 12:03:20,687 DEBUG root] Importing module: bzt.modules.shellexec
+[2020-08-06 12:03:20,688 DEBUG root] Loading class: 'ShellExecutor' from <module 'bzt.modules.shellexec' from '/usr/local/Cellar/bzt/1.14.0_1/libexec/lib/python3.8/site-packages/bzt/modules/shellexec.py'>
+[2020-08-06 12:03:20,688 DEBUG Engine.shellexec] Added prepare task: {'command': 'mvn -Dmaven.test.skip=true  clean package'}
+[2020-08-06 12:03:20,688 INFO Engine.shellexec.Task] Starting shell command: mvn -Dmaven.test.skip=true  clean package
+[2020-08-06 12:03:20,689 DEBUG root] Executing shell: mvn -Dmaven.test.skip=true  clean package at /Users/grace.tshihata/pit/performance
+[2020-08-06 12:03:20,996 DEBUG urllib3.connectionpool] https://gettaurus.org:443 "GET /updates/?version=1.14.0&installID=macos-784f439c7271 HTTP/1.1" 200 39
+[2020-08-06 12:03:20,997 DEBUG Engine] Taurus updates info: {'latest': '1.14.2', 'needsUpgrade': True}
+[2020-08-06 12:03:20,998 WARNING Engine] There is newer version of Taurus 1.14.2 available, consider upgrading. What's new: http://gettaurus.org/docs/Changelog/
+[2020-08-06 12:03:24,851 DEBUG Engine.shellexec.Task] Output for mvn -Dmaven.test.skip=true  clean package:
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for em-load-test:em-load-test:jar:1.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-jar-plugin is missing. @ line 139, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ---------------------< em-load-test:em-load-test >----------------------
+[INFO] Building em-load-test 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ em-load-test ---
+[INFO] Deleting /Users/grace.tshihata/pit/performance/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:copy-resources (copy-resources) @ em-load-test ---
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /Users/grace.tshihata/pit/performance/resources
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ em-load-test ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ em-load-test ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 5 source files to /Users/grace.tshihata/pit/performance/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/helpers/TestHelper.java:[7,14] cannot find symbol
+  symbol:   class ArrayLoginRequest
+  location: package models
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/helpers/TestHelper.java:[8,14] cannot find symbol
+  symbol:   class ArrayLoginResponse
+  location: package models
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/helpers/TestHelper.java:[9,14] cannot find symbol
+  symbol:   class ClientResponseRequestBody
+  location: package models
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/helpers/TestHelper.java:[10,14] cannot find symbol
+  symbol:   class QuestionRequestBody
+  location: package models
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/helpers/TestHelper.java:[198,19] cannot find symbol
+  symbol:   class ArrayLoginResponse
+  location: class helpers.TestHelper
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/models/Users.java:[6,12] cannot find symbol
+  symbol:   class Meta
+  location: class models.Users
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/models/Users.java:[7,12] cannot find symbol
+  symbol:   class Links
+  location: class models.Users
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/models/Users.java:[8,17] cannot find symbol
+  symbol:   class User
+  location: class models.Users
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/views/ClientAppHomePage.java:[17,40] cannot find symbol
+  symbol: class Page
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/helpers/TestHelper.java:[200,9] cannot find symbol
+  symbol:   class ArrayLoginRequest
+  location: class helpers.TestHelper
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/helpers/TestHelper.java:[200,51] cannot find symbol
+  symbol:   class ArrayLoginRequest
+  location: class helpers.TestHelper
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/helpers/TestHelper.java:[213,21] cannot find symbol
+  symbol:   class ArrayLoginResponse
+  location: class helpers.TestHelper
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/views/ClientAppHomePage.java:[23,9] cannot find symbol
+  symbol:   variable super
+  location: class views.ClientAppHomePage
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/views/ClientAppHomePage.java:[24,9] cannot find symbol
+  symbol:   method waitForElement(org.openqa.selenium.By)
+  location: class views.ClientAppHomePage
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/views/ClientAppHomePage.java:[25,24] cannot find symbol
+  symbol:   variable SLIDE_IMAGE
+  location: class views.ClientAppHomePage
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/views/ClientAppHomePage.java:[30,24] cannot find symbol
+  symbol:   variable ANSWER
+  location: class views.ClientAppHomePage
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/views/ClientAppHomePage.java:[31,9] cannot find symbol
+  symbol:   method delay(int)
+  location: class views.ClientAppHomePage
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/views/ClientAppHomePage.java:[35,52] cannot find symbol
+  symbol:   variable VIDEO_IFRAME
+  location: class views.ClientAppHomePage
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/views/ClientAppHomePage.java:[35,33] cannot find symbol
+  symbol:   variable driver
+  location: class views.ClientAppHomePage
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/views/ClientAppHomePage.java:[35,9] cannot find symbol
+  symbol:   variable driver
+  location: class views.ClientAppHomePage
+[INFO] 20 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.637 s
+[INFO] Finished at: 2020-08-06T12:03:24-04:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project em-load-test: Compilation failure: Compilation failure: 
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/helpers/TestHelper.java:[7,14] cannot find symbol
+[ERROR]   symbol:   class ArrayLoginRequest
+[ERROR]   location: package models
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/helpers/TestHelper.java:[8,14] cannot find symbol
+[ERROR]   symbol:   class ArrayLoginResponse
+[ERROR]   location: package models
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/helpers/TestHelper.java:[9,14] cannot find symbol
+[ERROR]   symbol:   class ClientResponseRequestBody
+[ERROR]   location: package models
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/helpers/TestHelper.java:[10,14] cannot find symbol
+[ERROR]   symbol:   class QuestionRequestBody
+[ERROR]   location: package models
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/helpers/TestHelper.java:[198,19] cannot find symbol
+[ERROR]   symbol:   class ArrayLoginResponse
+[ERROR]   location: class helpers.TestHelper
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/models/Users.java:[6,12] cannot find symbol
+[ERROR]   symbol:   class Meta
+[ERROR]   location: class models.Users
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/models/Users.java:[7,12] cannot find symbol
+[ERROR]   symbol:   class Links
+[ERROR]   location: class models.Users
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/models/Users.java:[8,17] cannot find symbol
+[ERROR]   symbol:   class User
+[ERROR]   location: class models.Users
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/views/ClientAppHomePage.java:[17,40] cannot find symbol
+[ERROR]   symbol: class Page
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/helpers/TestHelper.java:[200,9] cannot find symbol
+[ERROR]   symbol:   class ArrayLoginRequest
+[ERROR]   location: class helpers.TestHelper
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/helpers/TestHelper.java:[200,51] cannot find symbol
+[ERROR]   symbol:   class ArrayLoginRequest
+[ERROR]   location: class helpers.TestHelper
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/helpers/TestHelper.java:[213,21] cannot find symbol
+[ERROR]   symbol:   class ArrayLoginResponse
+[ERROR]   location: class helpers.TestHelper
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/views/ClientAppHomePage.java:[23,9] cannot find symbol
+[ERROR]   symbol:   variable super
+[ERROR]   location: class views.ClientAppHomePage
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/views/ClientAppHomePage.java:[24,9] cannot find symbol
+[ERROR]   symbol:   method waitForElement(org.openqa.selenium.By)
+[ERROR]   location: class views.ClientAppHomePage
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/views/ClientAppHomePage.java:[25,24] cannot find symbol
+[ERROR]   symbol:   variable SLIDE_IMAGE
+[ERROR]   location: class views.ClientAppHomePage
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/views/ClientAppHomePage.java:[30,24] cannot find symbol
+[ERROR]   symbol:   variable ANSWER
+[ERROR]   location: class views.ClientAppHomePage
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/views/ClientAppHomePage.java:[31,9] cannot find symbol
+[ERROR]   symbol:   method delay(int)
+[ERROR]   location: class views.ClientAppHomePage
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/views/ClientAppHomePage.java:[35,52] cannot find symbol
+[ERROR]   symbol:   variable VIDEO_IFRAME
+[ERROR]   location: class views.ClientAppHomePage
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/views/ClientAppHomePage.java:[35,33] cannot find symbol
+[ERROR]   symbol:   variable driver
+[ERROR]   location: class views.ClientAppHomePage
+[ERROR] /Users/grace.tshihata/pit/performance/src/main/java/views/ClientAppHomePage.java:[35,9] cannot find symbol
+[ERROR]   symbol:   variable driver
+[ERROR]   location: class views.ClientAppHomePage
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+
+[2020-08-06 12:03:24,851 DEBUG Engine.shellexec.Task] Task was finished with exit code 1: mvn -Dmaven.test.skip=true  clean package
+[2020-08-06 12:03:24,855 ERROR root] CalledProcessError: Command 'mvn -Dmaven.test.skip=true  clean package' returned non-zero exit status 1.
+  File "/usr/local/Cellar/bzt/1.14.0_1/libexec/lib/python3.8/site-packages/bzt/cli.py", line 258, in perform
+    self.engine.prepare()
+  File "/usr/local/Cellar/bzt/1.14.0_1/libexec/lib/python3.8/site-packages/bzt/engine/engine.py", line 194, in prepare
+    self.__prepare_services()
+  File "/usr/local/Cellar/bzt/1.14.0_1/libexec/lib/python3.8/site-packages/bzt/engine/engine.py", line 640, in __prepare_services
+    module.prepare()
+  File "/usr/local/Cellar/bzt/1.14.0_1/libexec/lib/python3.8/site-packages/bzt/modules/shellexec.py", line 104, in prepare
+    task.start()
+  File "/usr/local/Cellar/bzt/1.14.0_1/libexec/lib/python3.8/site-packages/bzt/modules/shellexec.py", line 191, in start
+    self._get_results()
+  File "/usr/local/Cellar/bzt/1.14.0_1/libexec/lib/python3.8/site-packages/bzt/modules/shellexec.py", line 218, in _get_results
+    raise CalledProcessError(self.process.returncode, self)
+[2020-08-06 12:03:24,855 INFO Engine] Post-processing...
+[2020-08-06 12:03:24,855 DEBUG Engine.consolidator] Consolidator buffer[0]: dict_keys([])
+[2020-08-06 12:03:24,857 DEBUG Engine.Configuration] Dumping YAML config into /Users/grace.tshihata/pit/performance/2020-08-06_12-03-20.394180/effective.yml
+[2020-08-06 12:03:24,880 DEBUG Engine.Configuration] Dumping JSON config into /Users/grace.tshihata/pit/performance/2020-08-06_12-03-20.394180/effective.json
+[2020-08-06 12:03:24,882 INFO root] Artifacts dir: /Users/grace.tshihata/pit/performance/2020-08-06_12-03-20.394180
+[2020-08-06 12:03:24,882 WARNING root] Done performing with code: 1
+[2020-08-06 12:03:24,883 DEBUG root] Closing log handler: /Users/grace.tshihata/pit/performance/2020-08-06_12-03-20.394180/bzt.log

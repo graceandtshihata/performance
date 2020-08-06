@@ -1,0 +1,19 @@
+---
+execution:
+- concurrency: 100
+  executor: jmeter
+  ramp-up: 10s
+  run-items:
+  - loadtests.ClientAPITest#pre1
+  scenario: apiCall
+reporting:
+- module: junit-xml
+scenarios:
+  apiCall:
+    additional-classpath:
+    - target/*
+    script: ./src/test/java/loadtests
+services:
+- module: shellexec
+  prepare: mvn -Dmaven.test.skip=true  clean package
+
